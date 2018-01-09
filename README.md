@@ -27,6 +27,12 @@ Update `FROM eeacms/kgs:X.Y` base image within `Dockerfile`
     $ vim Dockerfile
     FROM eeacms/kgs:19.5
 
+Update `FROM eeacms/www:X.Y` base image within `devel/Dockerfile`
+
+    $ cd eea.docker.plone-eea-www
+    $ vim devel/Dockerfile
+    FROM eeacms/www:19.5
+
 Commit changes
 
     $ git commit -am "Release 19.5"

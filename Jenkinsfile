@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   parameters {
-    string(defaultValue: "", description: 'Run tests with GIT_BRANCH env enabled', name: 'TARGET_BRANCH')
+    string(defaultValue: '', description: 'Run tests with GIT_BRANCH env enabled', name: 'TARGET_BRANCH')
   }
 
   stages {
@@ -12,11 +12,11 @@ pipeline {
           script {
             try {
               checkout scm
-              sh '''echo "TARGET_BRANCH=${params.TARGET_BRANCH}"'''
+              sh '''echo ${params.TARGET_BRANCH}'''
               sh '''docker build -t ${BUILD_TAG} .'''
               sh '''sed -i "s|eeacms/www.*|${BUILD_TAG}|g" devel/Dockerfile'''
               sh '''docker build -t ${BUILD_TAG}-devel devel'''
-              sh '''docker run -i --name="${BUILD_TAG}" -e GIT_BRANCH="${params.TARGET_BRANCH}" ${BUILD_TAG}-devel /debug.sh tests'''
+              sh '''docker run -i --name="${BUILD_TAG}" -e GIT_BRANCH=${params.TARGET_BRANCH} ${BUILD_TAG}-devel /debug.sh tests'''
             } finally {
               sh '''docker rm -v ${BUILD_TAG}'''
               sh '''docker rmi ${BUILD_TAG}-devel'''

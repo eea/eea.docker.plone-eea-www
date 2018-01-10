@@ -45,3 +45,5 @@ Push changes
 
     $ git push --tags
     $ git push
+
+After eeacms/www:19.5 is build, you need to trigger the release of eeacms/www-devel:19.5 ( which uses eeacms/www:19.5) 

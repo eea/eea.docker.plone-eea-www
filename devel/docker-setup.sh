@@ -2,7 +2,9 @@
 
 runDeps="
   build-essential
+  silversearcher-ag
   tmux
+  mc
 "
 
 chown plone:plone warmup.ini

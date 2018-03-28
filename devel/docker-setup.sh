@@ -2,6 +2,7 @@
 
 runDeps="
   build-essential
+  tmux
 "
 
 chown plone:plone warmup.ini

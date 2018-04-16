@@ -1,6 +1,6 @@
 # EEA Plone WWW Docker Image based on EEA KGS
 
-[![Build Status](http://ci.eionet.europa.eu/job/eea/job/eea.docker.plone-eea-www/job/master/badge/icon)](http://ci.eionet.europa.eu/job/eea/job/eea.docker.plone-eea-www/job/master/display/redirect)
+[![Build Status](https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.docker.plone-eea-www/master)](https://ci.eionet.europa.eu/job/eea/job/eea.docker.plone-eea-www/job/master/display/redirect)
 
 Docker Plone Image used for EEA website. See more at [eea.docker.www](https://github.com/eea/eea.docker.www)
 
@@ -46,4 +46,4 @@ Push changes
     $ git push --tags
     $ git push
 
-After eeacms/www:19.5 is build, you need to trigger the release of eeacms/www-devel:19.5 ( which uses eeacms/www:19.5) 
+After eeacms/www:19.5 is build, you need to trigger the release of eeacms/www-devel:19.5 ( which uses eeacms/www:19.5)

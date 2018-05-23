@@ -13,9 +13,6 @@ ENV portal_url=https://www.eea.europa.eu \
     RABBITMQ_PASS=guest \
     saved_resources=/data/www-static-resources \
     zope_i18n_compile_mo_files=true \
-    TRACEVIEW_SAMPLE_RATE=1.0 \
-    TRACEVIEW_DETAILED_PARTITION=1 \
-    TRACEVIEW_TRACING_MODE=always \
     WARMUP_BIN=/plone/instance/bin/warmup \
     WARMUP_INI=/plone/instance/warmup.ini \
     WARMUP_HEALTH_THRESHOLD=50000 \
@@ -24,4 +21,4 @@ ENV portal_url=https://www.eea.europa.eu \
 
 COPY src/plone/* /plone/instance/
 COPY src/docker/* /
-RUN /docker-setup.sh && /traceview-setup.sh
+RUN /docker-setup.sh

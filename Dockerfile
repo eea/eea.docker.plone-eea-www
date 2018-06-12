@@ -2,7 +2,6 @@ FROM eeacms/kgs:18.6.12
 ENV portal_url=https://www.eea.europa.eu \
     AOA_MAP_TILES=http://aoa.ew.eea.europa.eu/maptiles/ \
     AOA_PORTAL_URL=http://aoa.ew.eea.europa.eu/ \
-    SENTRY_DSN=https://b38b39812f6b4afdb41e8bd296740183@sentry.eea.europa.eu/2 \
     EEALOGINAGENT_LOG=/data/eea.controlpanel \
     EEACPBINSTANCESAGENT_LOG=/data/eea.controlpanel \
     RABBITMQ_HOST=rabbitmq \

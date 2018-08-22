@@ -5,6 +5,7 @@ runDeps="
   silversearcher-ag
   tmux
   mc
+  procps
 "
 
 chown plone:plone warmup.ini

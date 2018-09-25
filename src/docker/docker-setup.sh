@@ -37,5 +37,5 @@ echo "========================================================================="
 echo "Fixing permissions..."
 echo "========================================================================="
 
-mkdir -p /data/www-static-resources /data/eea.controlpanel
+mkdir -p /data/www-static-resources
 chown -R plone:plone /plone /data

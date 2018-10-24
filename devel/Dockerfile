@@ -1,4 +1,4 @@
-FROM eeacms/www:18.10.13
+FROM eeacms/www:18.10.24
 
 COPY docker-setup.sh /
 COPY warmup.ini /plone/instance/

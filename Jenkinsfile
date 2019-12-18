@@ -17,9 +17,9 @@ pipeline {
               sh "docker build -t ${BUILD_TAG}-devel devel"
               sh "docker run -i --name=${BUILD_TAG} -e GIT_BRANCH=${params.TARGET_BRANCH} ${BUILD_TAG}-devel /debug.sh tests"
             } finally {
-              sh "docker rm -v ${BUILD_TAG}"
-              sh "docker rmi ${BUILD_TAG}-devel"
-              sh "docker rmi ${BUILD_TAG}"
+              sh '''docker rm -v ${BUILD_TAG}'''
+              sh '''if [ -n "$(docker images -q ${BUILD_TAG}-devel)" ]; then docker rmi ${BUILD_TAG}-devel; fi'''
+              sh '''if [ -n "$(docker images -q ${BUILD_TAG})" ]; then docker rmi ${BUILD_TAG}; fi'''
             }
           }
         }

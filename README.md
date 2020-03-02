@@ -1,6 +1,8 @@
 # EEA Plone WWW Docker Image based on EEA KGS
 
 [![Build Status](https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.docker.plone-eea-www/master)](https://ci.eionet.europa.eu/job/eea/job/eea.docker.plone-eea-www/job/master/display/redirect)
+[![Pipeline Status](https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.docker.www/master&subject=pipeline)](https://ci.eionet.europa.eu/job/eea/job/eea.docker.www/job/master/display/redirect)
+[![Release](https://img.shields.io/github/release/eea/eea.docker.plone-eea-www)](https://github.com/eea/eea.docker.plone-eea-www/releases)
 
 Docker Plone Image used for EEA website. See more at [eea.docker.www](https://github.com/eea/eea.docker.www)
 

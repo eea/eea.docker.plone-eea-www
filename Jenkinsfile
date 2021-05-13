@@ -17,9 +17,9 @@ pipeline {
               sh "docker build -t ${BUILD_TAG}-devel devel"
               sh "docker run -i --name=${BUILD_TAG} -e GIT_BRANCH=${params.TARGET_BRANCH} ${BUILD_TAG}-devel /debug.sh tests"
             } finally {
-              sh '''docker rm -v ${BUILD_TAG}'''
-              sh '''if [ -n "$(docker images -q ${BUILD_TAG}-devel)" ]; then docker rmi ${BUILD_TAG}-devel; fi'''
-              sh '''if [ -n "$(docker images -q ${BUILD_TAG})" ]; then docker rmi ${BUILD_TAG}; fi'''
+              sh '''echo $(docker rm -v ${BUILD_TAG})'''
+              sh '''echo $(docker rmi ${BUILD_TAG}-devel)'''
+              sh '''echo $(docker rmi ${BUILD_TAG})'''
             }
           }
         }
@@ -27,7 +27,10 @@ pipeline {
     }
   }
 
-  post {
+  post { 
+    always {
+      cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
+    }
     changed {
       script {
         def url = "${env.BUILD_URL}/display/redirect"

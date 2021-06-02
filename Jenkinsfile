@@ -20,9 +20,9 @@ pipeline {
               sh "docker build -t ${IMAGE_NAME}-devel devel"
               sh "docker run -i --name=${IMAGE_NAME} -e GIT_BRANCH=${params.TARGET_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests"
             } finally {
-              sh script: "echo $(docker rm -v ${IMAGE_NAME})", returnStatus: true
-              sh script: "echo $(docker rmi ${IMAGE_NAME}-devel)", returnStatus: true
-              sh script: "echo $(docker rmi ${IMAGE_NAME})", returnStatus: true
+              sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
+              sh script: "docker rmi ${IMAGE_NAME}-devel", returnStatus: true
+              sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
             }
           }
         }

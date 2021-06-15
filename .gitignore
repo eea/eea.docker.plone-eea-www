@@ -1,3 +1,9 @@
 *.pyc
 .secret
 devel/src/*
+/buildout-cache
+
+# Exclude local development from Docker build context but include in VCS
+# https://www.rpatterson.net/blog/docker-gotchas/#build-context-and-image-stowaways
+/local-devel/*
+!/local-devel/.gitignore

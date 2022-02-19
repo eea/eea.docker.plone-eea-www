@@ -1,4 +1,4 @@
-FROM eeacms/kgs:latest
+FROM eeacms/kgs:22.2.19
 ENV portal_url=https://www.eea.europa.eu \
     AOA_MAP_TILES=http://aoa.ew.eea.europa.eu/maptiles/ \
     AOA_PORTAL_URL=http://aoa.ew.eea.europa.eu/ \

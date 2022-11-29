@@ -15,6 +15,9 @@ echo "========================================================================="
 apt-get update
 apt-get install -y --no-install-recommends $buildDeps
 
+echo "Running: pip install importlib-metadata==1.5.0"
+pip install importlib-metadata==1.5.0
+
 echo "========================================================================="
 echo "Running buildout -c buildout.cfg"
 echo "========================================================================="

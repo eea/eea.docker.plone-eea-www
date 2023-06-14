@@ -16,8 +16,8 @@ pipeline {
             try {
               checkout scm
               sh '''sed -i "s|eeacms/www.*|${IMAGE_NAME}|g" devel/Dockerfile'''
-              sh "docker build -t ${IMAGE_NAME} ."
-              sh "docker build -t ${IMAGE_NAME}-devel devel"
+              sh "docker build -t ${IMAGE_NAME} --no-cache ."
+              sh "docker build -t ${IMAGE_NAME}-devel --no-cache devel"
               sh "docker run -i --name=${IMAGE_NAME} -e GIT_BRANCH=${params.TARGET_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests"
             } finally {
               sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
